@@ -30,6 +30,14 @@ fi
 # 3. Installation de NVM + Node 24
 echo "Installation de NVM + Node.js..."
 
+echo "Vérification de curl..."
+if ! command -v curl >/dev/null 2>&1; then # Permet la vérification de la commande sur la machine
+  echo "Installation de Git..."
+  sudo apt install curl -y
+else
+  echo "curl déjà installé"
+fi
+
 # Voir docs pour installation de NVM et Node https://nodejs.org/en/download
 if [ ! -d "$HOME/.nvm" ]; then # Permet la vérification des packages de NVM sur la machine
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
