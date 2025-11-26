@@ -10,7 +10,7 @@ sudo apt upgrade -y
 echo "Vérification de Git..."
 if ! command -v git >/dev/null 2>&1; then # Permet la vérification de la commande sur la machine
   echo "Installation de Git..."
-  sudo apt install git -y
+  sudo apt install git-all -y
 else
   echo "Git déjà installé"
 fi
